@@ -89,8 +89,8 @@ export class BranchService {
       id: row.id,
       address:row.address,
       name: row.name,
-      area:row.area.name,
-      area_manager:row.area_manager.userName
+      area:row.area ? row.area.name :'',
+      area_manager:row.area_manager ? row.area_manager.userName : ''
     })
 
   }

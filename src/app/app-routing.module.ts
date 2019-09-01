@@ -13,6 +13,7 @@ import { ResearchTypeComponent } from './pages/research-type/research-type.compo
 import { UserRolesComponent } from './pages/user-roles/user-roles.component';
 import { BranchComponent } from './pages/branch/branch.component';
 import { UsersComponent } from './pages/users/users.component';
+import { CasesComponent } from './pages/cases/cases.component';
 
 const routes: Routes = [
 { path: '', redirectTo: 'area', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
 { path: 'researchtype', component: ResearchTypeComponent },
 { path: 'users', component: UsersComponent },
 
+{ path: 'cases', component: CasesComponent },
 
 { path: 'userroles', component: UserRolesComponent },
 { path: 'branch', component: BranchComponent },

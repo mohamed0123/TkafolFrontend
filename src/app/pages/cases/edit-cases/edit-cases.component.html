@@ -55,34 +55,88 @@
         </ng-container>
 
 
-        <ng-container matColumnDef="AREA_MANAGER">
-            <mat-header-cell *matHeaderCellDef>مدير الفرع</mat-header-cell>
-            <mat-cell *matCellDef="let element ; let i = index">
-                {{  element.user ?element.user.name :'' }}
-            </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="AREA">
-            <mat-header-cell *matHeaderCellDef>المنطقه</mat-header-cell>
-            <mat-cell *matCellDef="let element ; let i = index">
-                {{ element.area? element.area.name :'' }}
-            </mat-cell>
-          </ng-container>
 
 
-        <ng-container matColumnDef="ADDRESS">
-            <mat-header-cell *matHeaderCellDef>عنوان الفرع</mat-header-cell>
+
+        <ng-container matColumnDef="researchType">
+            <mat-header-cell *matHeaderCellDef>نوع البحث</mat-header-cell>
             <mat-cell *matCellDef="let element ; let i = index">
-                {{  element.address }}
+                {{  element.researchType?element.researchType.name:'' }}
             </mat-cell>
         </ng-container>
-        
 
-
-        <ng-container matColumnDef="NAME">
-            <mat-header-cell *matHeaderCellDef>اسم الفرع</mat-header-cell>
+        <ng-container matColumnDef="matrialState">
+            <mat-header-cell *matHeaderCellDef>الحالة المادية</mat-header-cell>
             <mat-cell *matCellDef="let element ; let i = index">
-                {{  element.name }}
+                {{  element.matrialState?element.matrialState.name:'' }}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="government">
+            <mat-header-cell *matHeaderCellDef>الحكومه</mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.government?element.government.name:''  }}
+            </mat-cell>
+        </ng-container>
+
+
+
+
+        <ng-container matColumnDef="area">
+            <mat-header-cell *matHeaderCellDef>المنطقه </mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.area ? element.area.name:'' }}
+            </mat-cell>
+        </ng-container>
+        ]
+        <ng-container matColumnDef="researchDate">
+            <mat-header-cell *matHeaderCellDef>تاريخ بحث الحاله</mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.researchDate }}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="idIssuedDate">
+            <mat-header-cell *matHeaderCellDef>تاريخ بدايه التعامل</mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.idIssuedDate }}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="idNumber">
+            <mat-header-cell *matHeaderCellDef>رقم الحاله</mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.idNumber }}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fileNumber">
+            <mat-header-cell *matHeaderCellDef>رقم الملف</mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.fileNumber }}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="telephone">
+            <mat-header-cell *matHeaderCellDef>الهاتف</mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.telephone }}
+            </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="caseName">
+            <mat-header-cell *matHeaderCellDef>الاسم</mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.caseName }}
+            </mat-cell>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="address">
+            <mat-header-cell *matHeaderCellDef>عنوان الحاله</mat-header-cell>
+            <mat-cell *matCellDef="let element ; let i = index">
+                {{  element.address }}
             </mat-cell>
         </ng-container>
 

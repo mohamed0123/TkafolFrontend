@@ -60,6 +60,9 @@ import { CreateBranchComponent } from './pages/branch/create-branch/create-branc
 import { UsersComponent } from './pages/users/users.component';
 import { EditUsersComponent } from './pages/users/edit-users/edit-users.component';
 import { CreateUsersComponent } from './pages/users/create-users/create-users.component';
+import { CasesComponent } from './pages/cases/cases.component';
+import { EditCasesComponent } from './pages/cases/edit-cases/edit-cases.component';
+import { CreateCasesComponent } from './pages/cases/create-cases/create-cases.component';
  
 @NgModule({
   declarations: [
@@ -97,6 +100,9 @@ import { CreateUsersComponent } from './pages/users/create-users/create-users.co
      UsersComponent,
      EditUsersComponent,
      CreateUsersComponent,
+     CasesComponent,
+     EditCasesComponent,
+     CreateCasesComponent,
  
     
   ],
@@ -135,6 +141,6 @@ import { CreateUsersComponent } from './pages/users/create-users/create-users.co
   ],
   providers: [MatDatepickerModule,  ExcelService , DatePipe],
   bootstrap: [AppComponent],
-  entryComponents:[ CreateComponent ,CreateUsersComponent ,CreateBranchComponent , CreateUserRolesComponent, CreateResearchTypeComponent, CreateMaterialStateComponent , CreateJobsComponent,CreateGenderComponent, CreateGovernmentComponent, CreateDiseasesComponent , MatConfirmDialogComponent]
+  entryComponents:[ CreateComponent , CreateCasesComponent ,CreateUsersComponent ,CreateBranchComponent , CreateUserRolesComponent, CreateResearchTypeComponent, CreateMaterialStateComponent , CreateJobsComponent,CreateGenderComponent, CreateGovernmentComponent, CreateDiseasesComponent , MatConfirmDialogComponent]
 })
 export class AppModule { }
