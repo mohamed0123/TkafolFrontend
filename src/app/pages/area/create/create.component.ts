@@ -25,7 +25,7 @@ export class CreateComponent implements OnInit {
 
         console.log(data)
         this.notificationService.success('تمت العمليه بنجاح');
-
+        this.onClose();
       },
       error => {
         console.log(error)
@@ -34,7 +34,7 @@ export class CreateComponent implements OnInit {
 
     );
 
-    this.onClose();
+   
   }
 
   onClose() {

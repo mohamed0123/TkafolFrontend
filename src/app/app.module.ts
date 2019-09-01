@@ -54,6 +54,12 @@ import { CreateResearchTypeComponent } from './pages/research-type/create-resear
 import { UserRolesComponent } from './pages/user-roles/user-roles.component';
 import { EditUserRolesComponent } from './pages/user-roles/edit-user-roles/edit-user-roles.component';
 import { CreateUserRolesComponent } from './pages/user-roles/create-user-roles/create-user-roles.component';
+import { BranchComponent } from './pages/branch/branch.component';
+import { EditBranchComponent } from './pages/branch/edit-branch/edit-branch.component';
+import { CreateBranchComponent } from './pages/branch/create-branch/create-branch.component';
+import { UsersComponent } from './pages/users/users.component';
+import { EditUsersComponent } from './pages/users/edit-users/edit-users.component';
+import { CreateUsersComponent } from './pages/users/create-users/create-users.component';
  
 @NgModule({
   declarations: [
@@ -85,6 +91,12 @@ import { CreateUserRolesComponent } from './pages/user-roles/create-user-roles/c
      UserRolesComponent,
      EditUserRolesComponent,
      CreateUserRolesComponent,
+     BranchComponent,
+     EditBranchComponent,
+     CreateBranchComponent,
+     UsersComponent,
+     EditUsersComponent,
+     CreateUsersComponent,
  
     
   ],
@@ -123,6 +135,6 @@ import { CreateUserRolesComponent } from './pages/user-roles/create-user-roles/c
   ],
   providers: [MatDatepickerModule,  ExcelService , DatePipe],
   bootstrap: [AppComponent],
-  entryComponents:[ CreateComponent  , CreateUserRolesComponent, CreateResearchTypeComponent, CreateMaterialStateComponent , CreateJobsComponent,CreateGenderComponent, CreateGovernmentComponent, CreateDiseasesComponent , MatConfirmDialogComponent]
+  entryComponents:[ CreateComponent ,CreateUsersComponent ,CreateBranchComponent , CreateUserRolesComponent, CreateResearchTypeComponent, CreateMaterialStateComponent , CreateJobsComponent,CreateGenderComponent, CreateGovernmentComponent, CreateDiseasesComponent , MatConfirmDialogComponent]
 })
 export class AppModule { }

@@ -1,0 +1,99 @@
+<mat-toolbar>
+    <span class="fill-remaining-space"></span>
+    <span>{{service.form.controls['id'].value?"تعديل فرع ":" ادخال فرع "}}</span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+
+<form [formGroup]="service.form" (ngSubmit)="onFormSubmit()" class="normal-form">
+    <mat-grid-list cols="2" rowHeight="360px">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName="id">
+
+                
+
+                <mat-form-field style="text-align: right">
+                    <input  formControlName="address" matInput placeholder="العنوان">
+                </mat-form-field>
+
+                <mat-form-field style="text-align: right">
+                    <input  formControlName="phone" matInput placeholder="رقم الهاتف">
+                </mat-form-field>
+
+                <mat-form-field style="text-align: right">
+                    <input  formControlName="password" matInput placeholder="الباسورد">
+                </mat-form-field>
+
+                <mat-form-field style="text-align: right">
+                    <input  formControlName="email" matInput placeholder="الايميل">
+                </mat-form-field>
+
+                <mat-form-field style="text-align: right">
+                    <input  formControlName="user_name" matInput placeholder="الاسم">
+                </mat-form-field>
+
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+
+
+                <mat-form-field style="text-align: right">
+                    <mat-select formControlName="role" placeholder=" من فضلك اختر الدور">
+                      <!-- <mat-option>None</mat-option> -->
+                      <ng-container *ngFor="let rule of allRules">
+                        <mat-option value="{{rule.name}}">{{rule.name}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </mat-form-field>
+
+
+                <mat-form-field style="text-align: right">
+                    <mat-select formControlName="manager" placeholder=" من فضلك اختر المسئول">
+                      <!-- <mat-option>None</mat-option> -->
+                      <ng-container *ngFor="let manger of allMangers">
+                        <mat-option value="{{manger.user_name}}">{{manger.user_name}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </mat-form-field>
+
+                <mat-form-field style="text-align: right">
+                    <mat-select formControlName="gender" placeholder="*من فضلك اختر النوع">
+                      <!-- <mat-option>None</mat-option> -->
+                      <ng-container *ngFor="let gender of allGender">
+                        <mat-option value="{{gender.name}}">{{gender.name}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </mat-form-field>
+
+
+                <mat-form-field style="text-align: right">
+                    <mat-select formControlName="area" placeholder="*من فضلك اختر المنطقه">
+                      <!-- <mat-option>None</mat-option> -->
+                      <ng-container *ngFor="let area of allAreas">
+                        <mat-option value="{{area.name}}">{{area.name}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field style="text-align: right">
+                    <mat-select formControlName="branch" placeholder="*من فضلك اختر الفرع">
+                      <!-- <mat-option>None</mat-option> -->
+                      <ng-container *ngFor="let branch of allBranchs">
+                        <mat-option value="{{branch.name}}">{{branch.name}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </mat-form-field>
+
+
+                <div class="button-row">
+                    <!-- [disabled]="service.form.invalid" -->
+                    <button mat-raised-button color="primary" type="submit">حفظ</button>
+                    <button id='buttonReset' mat-raised-button color="warn" type="reset">مسح الكل</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>

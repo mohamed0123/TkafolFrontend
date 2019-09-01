@@ -1,0 +1,57 @@
+<mat-toolbar>
+    <span class="fill-remaining-space"></span>
+    <span>{{service.form.controls['id'].value?"تعديل فرع ":" ادخال فرع "}}</span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+
+<form [formGroup]="service.form" (ngSubmit)="onFormSubmit()" class="normal-form">
+    <mat-grid-list cols="2" rowHeight="360px">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName="id">
+
+
+                <mat-form-field style="text-align: right">
+                    <input  formControlName="address" matInput placeholder="عنوان الفرع">
+                </mat-form-field>
+
+                <mat-form-field style="text-align: right">
+                    <input  formControlName="name" matInput placeholder="اسم الفرع">
+                </mat-form-field>
+
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+
+
+                <mat-form-field style="text-align: right">
+                    <mat-select formControlName="area" placeholder="*من فضلك اختر المنطقه">
+                      <!-- <mat-option>None</mat-option> -->
+                      <ng-container *ngFor="let area of allAreas">
+                        <mat-option value="{{area.name}}">{{area.name}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field style="text-align: right">
+                    <mat-select formControlName="area_manager" placeholder="*من فضلك اختر مدير الفرع">
+                      <!-- <mat-option>None</mat-option> -->
+                      <ng-container *ngFor="let manger of allMangers">
+                        <mat-option value="{{manger.userName}}">{{manger.userName}}</mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </mat-form-field>
+
+
+                <div class="button-row">
+                    <!-- [disabled]="service.form.invalid" -->
+                    <button mat-raised-button color="primary" type="submit">حفظ</button>
+                    <button id='buttonReset' mat-raised-button color="warn" type="reset">مسح الكل</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>

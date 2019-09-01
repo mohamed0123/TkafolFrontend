@@ -37,11 +37,14 @@
           <a style="direction: rtl" mat-menu-item routerLink="/userroles" routerLinkActive="active"
           (click)="drawer.toggle()">اضافه دور المستخدم </a>
 
+          <a style="direction: rtl" mat-menu-item routerLink="/branch" routerLinkActive="active"
+          (click)="drawer.toggle()">اضافه فرع </a>
           
           
       </mat-menu>
-   
-     
+      <a style="direction: rtl" mat-list-item routerLink="/users" routerLinkActive="active" (click)="drawer.toggle()"> اضافه مستخدم </a>
+
+      
 
 
       <a mat-list-item routerLink="/login" routerLinkActive="active" (click)="logOut(drawer)">خروج</a>
@@ -68,6 +71,7 @@
     </div>
 
     <!-- for test -->
-    <!-- <app-area></app-area> -->
+    <!-- <app-create-branch></app-create-branch> -->
+
   </mat-sidenav-content>
 </mat-sidenav-container>
