@@ -8,44 +8,52 @@
     [opened]="false">
     <mat-toolbar>القائمه</mat-toolbar>
     <mat-nav-list class="float-right">
-      <button mat-button [matMenuTriggerFor]="menu"><img class="left-angle-style" style="direction: rtl"
+      <!-- <button mat-button [matMenuTriggerFor]="menu"><img class="left-angle-style" style="direction: rtl"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAPFBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACHr/7WAAAAE3RSTlMAK8DozWNkFf0SZw8oYLL+6dEmcxEPXQAAAGVJREFUSMft1MsOQDAQRuEqrbpf5v3flQQLDeJYiMSc/ZdJu/iN0bRdTU2FD31ChQgzZSdzLbwhkhUqviSGMT+vOhLXWSwi4ji5ZSKyGvL8zZBPVvOm4aO03EnhXLpAxZMZ1/7SBCzqFTK+FUtSAAAAAElFTkSuQmCC">
-        قائمه فرعيه</button>
+        قائمه فرعيه</button> -->
 
 
-      <mat-menu style="direction: rtl" #menu="matMenu">
-        <a style="direction: rtl" mat-menu-item routerLink="/area" routerLinkActive="active"
-          (click)="drawer.toggle()">اضافه منطقه</a>
+      <!-- <mat-menu style="direction: rtl" #menu="matMenu">
+         <a style="direction: rtl" mat-menu-item routerLink="/area" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه منطقه</a>
+      </mat-menu> -->
 
-          <a style="direction: rtl" mat-menu-item routerLink="/diseases" routerLinkActive="active"
-          (click)="drawer.toggle()">اضافه مرض</a>
 
-          <a style="direction: rtl" mat-menu-item routerLink="/government" routerLinkActive="active"
-          (click)="drawer.toggle()">اضافه حكومه</a>
+      <a style="direction: rtl" mat-list-item routerLink="/area" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه منطقه</a>
 
-          <a style="direction: rtl" mat-menu-item routerLink="/gender" routerLinkActive="active"
-          (click)="drawer.toggle()">اضافه نوع</a>
+      <a style="direction: rtl" mat-list-item routerLink="/diseases" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه مرض</a>
 
-          <a style="direction: rtl" mat-menu-item routerLink="/jobs" routerLinkActive="active"
-          (click)="drawer.toggle()">اضافه وظيفه</a>
-          
-          <a style="direction: rtl" mat-menu-item routerLink="/matyerialstate" routerLinkActive="active"
-          (click)="drawer.toggle()"> اضافه الحالة المادية </a>
+      <a style="direction: rtl" mat-list-item routerLink="/government" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه حكومه</a>
 
-          <a style="direction: rtl" mat-menu-item routerLink="/researchtype" routerLinkActive="active"
-          (click)="drawer.toggle()">اضافه نوع بحث </a>
-          <a style="direction: rtl" mat-menu-item routerLink="/userroles" routerLinkActive="active"
-          (click)="drawer.toggle()">اضافه دور المستخدم </a>
+      <a style="direction: rtl" mat-list-item routerLink="/gender" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه نوع</a>
 
-          <a style="direction: rtl" mat-menu-item routerLink="/branch" routerLinkActive="active"
-          (click)="drawer.toggle()">اضافه فرع </a>
-          
-          
-      </mat-menu>
-      <a style="direction: rtl" mat-list-item routerLink="/users" routerLinkActive="active" (click)="drawer.toggle()"> اضافه مستخدم </a>
-      <a style="direction: rtl" mat-list-item routerLink="/cases" routerLinkActive="active" (click)="drawer.toggle()"> اضافه حاله </a>
+      <a style="direction: rtl" mat-list-item routerLink="/jobs" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه وظيفه</a>
 
-      
+      <a style="direction: rtl" mat-list-item routerLink="/matyerialstate" routerLinkActive="active"
+        (click)="drawer.toggle()"> اضافه الحالة المادية </a>
+
+      <a style="direction: rtl" mat-list-item routerLink="/researchtype" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه نوع بحث </a>
+      <a style="direction: rtl" mat-list-item routerLink="/userroles" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه دور المستخدم </a>
+
+      <a style="direction: rtl" mat-list-item routerLink="/branch" routerLinkActive="active"
+        (click)="drawer.toggle()">اضافه فرع </a>
+
+
+
+
+      <a style="direction: rtl" mat-list-item routerLink="/users" routerLinkActive="active" (click)="drawer.toggle()">
+        اضافه مستخدم </a>
+      <a style="direction: rtl" mat-list-item routerLink="/cases" routerLinkActive="active" (click)="drawer.toggle()">
+        اضافه حاله </a>
+
+
 
 
       <a mat-list-item routerLink="/login" routerLinkActive="active" (click)="logOut(drawer)">خروج</a>
