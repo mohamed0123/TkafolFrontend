@@ -47,7 +47,11 @@ export class EditMaterialStateComponent implements OnInit {
     this.service.getAll().subscribe(data => {
       if (data) {
         this.tableData = []
-        this.dataArray = new MatTableDataSource<any>(this.tableData);
+        this.dataArray = new MatTableDataSource<any>(this.tableData);    
+this.dataArray.filterPredicate = (data: any, filterValue:string) => {
+      const dataStr =JSON.stringify(data).toLowerCase();
+      return dataStr.indexOf(filterValue) != -1; 
+    }
         this.dataArray.filter = ''
         this.dataArray.paginator = this.paginator;
 
@@ -58,7 +62,11 @@ export class EditMaterialStateComponent implements OnInit {
             this.tableData.push(element)
           });
 
-          this.dataArray = new MatTableDataSource<any>(this.tableData);
+          this.dataArray = new MatTableDataSource<any>(this.tableData);    
+this.dataArray.filterPredicate = (data: any, filterValue:string) => {
+      const dataStr =JSON.stringify(data).toLowerCase();
+      return dataStr.indexOf(filterValue) != -1; 
+    }
           this.dataArray.filter = ''
           this.dataArray.paginator = this.paginator;
         }
@@ -90,7 +98,11 @@ export class EditMaterialStateComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    this.dialog.open(CreateMaterialStateComponent, dialogConfig);
+    let dialogRef =  this.dialog.open(CreateMaterialStateComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(data=>{
+
+      this.loadData();
+    });
   }
 
 
@@ -100,7 +112,11 @@ export class EditMaterialStateComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    this.dialog.open(CreateMaterialStateComponent, dialogConfig);
+    let dialogRef = this.dialog.open(CreateMaterialStateComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(data=>{
+
+      this.loadData();
+    });
   }
 
   onDelete($key) {
@@ -127,7 +143,7 @@ export class EditMaterialStateComponent implements OnInit {
   }
 
   exportAsXLSX(): void {
-    this.excelService.exportAsExcelFile(this.tableData, 'sample');
+    this.excelService.exportAsExcelFile('sample');
   }
 
 }

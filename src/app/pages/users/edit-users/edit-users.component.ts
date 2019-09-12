@@ -48,7 +48,11 @@ export class EditUsersComponent implements OnInit {
     this.service.getAll().subscribe(data => {
       if (data) {
         this.tableData = []
-        this.dataArray = new MatTableDataSource<any>(this.tableData);
+        this.dataArray = new MatTableDataSource<any>(this.tableData);    
+this.dataArray.filterPredicate = (data: any, filterValue:string) => {
+      const dataStr =JSON.stringify(data).toLowerCase();
+      return dataStr.indexOf(filterValue) != -1; 
+    }
         this.dataArray.filter = ''
         this.dataArray.paginator = this.paginator;
 
@@ -59,7 +63,11 @@ export class EditUsersComponent implements OnInit {
             this.tableData.push(element)
           });
 
-          this.dataArray = new MatTableDataSource<any>(this.tableData);
+          this.dataArray = new MatTableDataSource<any>(this.tableData);    
+this.dataArray.filterPredicate = (data: any, filterValue:string) => {
+      const dataStr =JSON.stringify(data).toLowerCase();
+      return dataStr.indexOf(filterValue) != -1; 
+    }
           this.dataArray.filter = ''
           this.dataArray.paginator = this.paginator;
         }
@@ -91,7 +99,11 @@ export class EditUsersComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    this.dialog.open(CreateUsersComponent, dialogConfig);
+    let dialogRef =  this.dialog.open(CreateUsersComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(data=>{
+
+      this.loadData();
+    });
   }
 
 
@@ -101,7 +113,11 @@ export class EditUsersComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    this.dialog.open(CreateUsersComponent, dialogConfig);
+    let dialogRef =  this.dialog.open(CreateUsersComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(data=>{
+
+      this.loadData();
+    });
   }
 
   onDelete($key) {
@@ -128,7 +144,7 @@ export class EditUsersComponent implements OnInit {
   }
 
   exportAsXLSX(): void {
-    this.excelService.exportAsExcelFile(this.tableData, 'sample');
+    this.excelService.exportAsExcelFile('sample');
   }
 
 }

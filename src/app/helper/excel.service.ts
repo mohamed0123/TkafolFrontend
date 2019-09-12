@@ -12,11 +12,41 @@ export class ExcelService {
 
   constructor() { }
 
-  
-  public exportAsExcelFile(json: any[], excelFileName: string): void {
-    
-    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json);
-    console.log('worksheet',worksheet);
+
+  public exportAsExcelFile(excelFileName: string): void {
+    let json = []
+
+
+    document.querySelectorAll('mat-header-row').forEach(
+      r => {
+        let row = []
+        r.querySelectorAll('mat-header-cell').forEach(e => {
+          let cell = <HTMLElement>e
+          row.push(cell.innerText)
+        })
+
+        json.push(row.slice(1))
+      }
+    )
+
+    document.querySelectorAll('mat-row').forEach(
+      r => {
+        let row = []
+        r.querySelectorAll('mat-cell').forEach(e => {
+          let cell = <HTMLElement>e
+          row.push(cell.innerText)
+        })
+
+        json.push(row.slice(1))
+      }
+    )
+
+
+    json = json;
+
+
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json, { skipHeader: true });
+    console.log('worksheet', worksheet);
     const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
     //const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'buffer' });
