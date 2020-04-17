@@ -30,7 +30,7 @@ export class CreateUsersComponent implements OnInit {
     this.userRolesService.getAll().subscribe(
       data => {
         this.allRules = data
-        console.table(this.allGender)
+        console.table(this.allRules)
       }
     )
 

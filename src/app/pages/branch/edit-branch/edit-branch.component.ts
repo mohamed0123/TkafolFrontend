@@ -13,9 +13,9 @@ import { CreateBranchComponent } from '../create-branch/create-branch.component'
 })
 export class EditBranchComponent implements OnInit {
 
- 
 
-  displayedColumns: string[] = ['UPDATE', 'LST', 'AREA_MANAGER','AREA','ADDRESS', 'NAME'];
+
+  displayedColumns: string[] = ['UPDATE', 'LST', 'AREA_MANAGER', 'AREA', 'ADDRESS', 'NAME'];
   checker;
   dataArray: MatTableDataSource<any>;
   tableData = []
@@ -48,11 +48,11 @@ export class EditBranchComponent implements OnInit {
     this.service.getAll().subscribe(data => {
       if (data) {
         this.tableData = []
-        this.dataArray = new MatTableDataSource<any>(this.tableData);    
-this.dataArray.filterPredicate = (data: any, filterValue:string) => {
-      const dataStr =JSON.stringify(data).toLowerCase();
-      return dataStr.indexOf(filterValue) != -1; 
-    }
+        this.dataArray = new MatTableDataSource<any>(this.tableData);
+        this.dataArray.filterPredicate = (data: any, filterValue: string) => {
+          const dataStr = JSON.stringify(data).toLowerCase();
+          return dataStr.indexOf(filterValue) != -1;
+        }
         this.dataArray.filter = ''
         this.dataArray.paginator = this.paginator;
 
@@ -63,11 +63,11 @@ this.dataArray.filterPredicate = (data: any, filterValue:string) => {
             this.tableData.push(element)
           });
 
-          this.dataArray = new MatTableDataSource<any>(this.tableData);    
-this.dataArray.filterPredicate = (data: any, filterValue:string) => {
-      const dataStr =JSON.stringify(data).toLowerCase();
-      return dataStr.indexOf(filterValue) != -1; 
-    }
+          this.dataArray = new MatTableDataSource<any>(this.tableData);
+          this.dataArray.filterPredicate = (data: any, filterValue: string) => {
+            const dataStr = JSON.stringify(data).toLowerCase();
+            return dataStr.indexOf(filterValue) != -1;
+          }
           this.dataArray.filter = ''
           this.dataArray.paginator = this.paginator;
         }
@@ -99,9 +99,9 @@ this.dataArray.filterPredicate = (data: any, filterValue:string) => {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    let dialogRef =    this.dialog.open(CreateBranchComponent, dialogConfig);
+    let dialogRef = this.dialog.open(CreateBranchComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(data=>{
+    dialogRef.afterClosed().subscribe(data => {
 
       this.loadData();
     });
@@ -114,8 +114,8 @@ this.dataArray.filterPredicate = (data: any, filterValue:string) => {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    let dialogRef =   this.dialog.open(CreateBranchComponent, dialogConfig);
-    dialogRef.afterClosed().subscribe(data=>{
+    let dialogRef = this.dialog.open(CreateBranchComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(data => {
 
       this.loadData();
     });

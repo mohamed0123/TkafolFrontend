@@ -116,7 +116,7 @@ export class UsersService {
       email: row.email,
       address: row.address,
       user_name: row.userName,
-      role: row.role ? row.role.name : '',
+      role: row.userRole ? row.userRole.name : '',
       manager: row.user ? row.user.name : '',
       gender: row.gender ? row.gender.name : '',
       area: row.area ? row.area.name : '',

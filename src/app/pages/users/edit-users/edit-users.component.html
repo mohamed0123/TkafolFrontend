@@ -80,7 +80,7 @@
         <ng-container matColumnDef="ROLE">
             <mat-header-cell *matHeaderCellDef>الدور</mat-header-cell>
             <mat-cell *matCellDef="let element ; let i = index">
-                {{  element.role? element.role.name:'' }}
+                {{  element.userRole? element.userRole.name:'' }}
             </mat-cell>
         </ng-container>
 
@@ -126,7 +126,7 @@
         <ng-container matColumnDef="USER_NAME">
             <mat-header-cell *matHeaderCellDef>الاسم</mat-header-cell>
             <mat-cell *matCellDef="let element ; let i = index">
-                {{  element.user_name }}
+                {{  element.userName }}
             </mat-cell>
         </ng-container>
 
