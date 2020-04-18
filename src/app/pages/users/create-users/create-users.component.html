@@ -7,38 +7,12 @@
 </mat-toolbar>
 
 <form [formGroup]="service.form" (ngSubmit)="onFormSubmit()" class="normal-form">
-    <mat-grid-list cols="2" rowHeight="360px">
-        <mat-grid-tile>
-            <div class="controles-container">
-                <input type="hidden" formControlName="id">
-
-                
-
-                <mat-form-field style="text-align: right">
-                    <input  formControlName="address" matInput placeholder="العنوان">
-                </mat-form-field>
-
-                <mat-form-field style="text-align: right">
-                    <input  formControlName="phone" matInput placeholder="رقم الهاتف">
-                </mat-form-field>
-
-                <mat-form-field style="text-align: right">
-                    <input  formControlName="password" matInput placeholder="الباسورد">
-                </mat-form-field>
-
-                <mat-form-field style="text-align: right">
-                    <input  formControlName="email" matInput placeholder="الايميل">
-                </mat-form-field>
-
-                <mat-form-field style="text-align: right">
-                    <input  formControlName="user_name" matInput placeholder="الاسم">
-                </mat-form-field>
-
-            </div>
-        </mat-grid-tile>
+    <mat-grid-list cols="2" rowHeight="420px">
+        
         <mat-grid-tile>
             <div class="controles-container">
 
+                <div style="height:50px ;"></div>
 
                 <mat-form-field style="text-align: right">
                     <mat-select formControlName="role" placeholder=" من فضلك اختر الدور">
@@ -95,5 +69,34 @@
                 </div>
             </div>
         </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="controles-container">
+              <input type="hidden" formControlName="id">
+
+              <mat-form-field style="text-align: right">
+                <input  formControlName="user_name" matInput placeholder="الاسم">
+            </mat-form-field>
+
+              <mat-form-field style="text-align: right">
+                  <input  formControlName="address" matInput placeholder="العنوان">
+              </mat-form-field>
+
+              <mat-form-field style="text-align: right">
+                  <input  formControlName="phone" matInput placeholder="رقم الهاتف">
+              </mat-form-field>
+
+              <mat-form-field style="text-align: right">
+                  <input  formControlName="password" matInput placeholder="الباسورد">
+              </mat-form-field>
+
+              <mat-form-field style="text-align: right">
+                  <input  formControlName="email" matInput placeholder="الايميل">
+              </mat-form-field>
+
+             
+
+          </div>
+      </mat-grid-tile>
     </mat-grid-list>
 </form>

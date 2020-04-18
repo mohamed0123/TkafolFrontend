@@ -8,24 +8,10 @@
 
 <form [formGroup]="service.form" (ngSubmit)="onFormSubmit()" class="normal-form">
     <mat-grid-list cols="2" rowHeight="360px">
+       
         <mat-grid-tile>
             <div class="controles-container">
-                <input type="hidden" formControlName="id">
-
-
-                <mat-form-field style="text-align: right">
-                    <input  formControlName="address" matInput placeholder="عنوان الفرع">
-                </mat-form-field>
-
-                <mat-form-field style="text-align: right">
-                    <input  formControlName="name" matInput placeholder="اسم الفرع">
-                </mat-form-field>
-
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <div class="controles-container">
-
+<div style="height: 50px;"></div>
 
                 <mat-form-field style="text-align: right">
                     <mat-select formControlName="area" placeholder="*من فضلك اختر المنطقه">
@@ -53,5 +39,21 @@
                 </div>
             </div>
         </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="controles-container">
+              <input type="hidden" formControlName="id">
+
+
+              <mat-form-field style="text-align: right">
+                  <input  formControlName="address" matInput placeholder="عنوان الفرع">
+              </mat-form-field>
+
+              <mat-form-field style="text-align: right">
+                  <input  formControlName="name" matInput placeholder="اسم الفرع">
+              </mat-form-field>
+
+          </div>
+      </mat-grid-tile>
     </mat-grid-list>
 </form>

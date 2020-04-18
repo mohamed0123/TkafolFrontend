@@ -28,8 +28,9 @@ export class CreateBranchComponent implements OnInit {
     )
 
 
-    this.usersService.getUsersByRule(1).subscribe(
-      data => {
+    // this.usersService.getUsersByRule(1).subscribe(
+      this.usersService.getAll().subscribe(
+        data => {
         this.allMangers = data
         console.log('managers')
         console.table(this.allMangers)

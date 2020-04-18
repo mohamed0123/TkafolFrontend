@@ -56,8 +56,9 @@ export class CreateUsersComponent implements OnInit {
     )
 
 
-    this.service.getUsersByRule(0).subscribe(
-      data => {
+    // this.service.getUsersByRule(0).subscribe(
+      this.service.getAll().subscribe(
+        data => {
         this.allMangers = data
         console.table(this.allMangers)
       }
